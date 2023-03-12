@@ -24,9 +24,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-  #  permission_classes = (
-  #      permissions.IsAuthenticated, IsAuthorOrReadOnly
-  #  )
 
     def get_queryset(self):
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
